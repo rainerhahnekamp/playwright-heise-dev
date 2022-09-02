@@ -49,6 +49,7 @@ const config: PlaywrightTestConfig = {
       name: "chromium",
       use: {
         ...devices["Desktop Chrome"],
+        storageState: "john-list.chromium.json",
       },
     },
 
@@ -56,6 +57,7 @@ const config: PlaywrightTestConfig = {
       name: "firefox",
       use: {
         ...devices["Desktop Firefox"],
+        storageState: "john-list.firefox.json",
       },
     },
 
@@ -63,6 +65,7 @@ const config: PlaywrightTestConfig = {
       name: "webkit",
       use: {
         ...devices["Desktop Safari"],
+        storageState: "john-list.webkit.json",
       },
     },
 
