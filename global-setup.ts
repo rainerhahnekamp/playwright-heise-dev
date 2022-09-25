@@ -1,4 +1,4 @@
-import { chromium, firefox, FullConfig, webkit } from "@playwright/test";
+import { chromium, firefox, webkit } from "@playwright/test";
 
 async function globalSetup() {
   for (const browserType of [chromium, firefox, webkit]) {

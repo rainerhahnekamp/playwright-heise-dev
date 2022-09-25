@@ -61,13 +61,13 @@ const config: PlaywrightTestConfig = {
       },
     },
 
-    {
-      name: "webkit",
-      use: {
-        ...devices["Desktop Safari"],
-        storageState: "john-list.webkit.json",
-      },
-    },
+    // {
+    //   name: "webkit",
+    //   use: {
+    //     ...devices["Desktop Safari"],
+    //     storageState: "john-list.webkit.json",
+    //   },
+    // },
 
     /* Test against mobile viewports. */
     // {
