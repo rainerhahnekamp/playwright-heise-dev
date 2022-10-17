@@ -12,8 +12,8 @@ test('should add a new customer', async ({ page }) => {
   await page.locator('data-testid=btn-submit').click();
 
   await expect(
-    page.locator('data-testid=row-customer', {
-      hasText: 'Dervist, Luise',
-    })
+    page.locator(
+      'mat-table >> data-testid=row-customer >> "Bellitissa, Latitia"'
+    )
   ).toBeVisible();
 });

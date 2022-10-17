@@ -1,5 +1,5 @@
-import type { PlaywrightTestConfig } from "@playwright/test";
-import { devices } from "@playwright/test";
+import type { PlaywrightTestConfig } from '@playwright/test';
+import { devices } from '@playwright/test';
 
 /**
  * Read environment variables from file.
@@ -11,8 +11,8 @@ import { devices } from "@playwright/test";
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
-  testDir: "./tests",
-  globalSetup: "./global-setup.ts",
+  testDir: './tests',
+  globalSetup: './global-setup.ts',
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {
@@ -31,43 +31,43 @@ const config: PlaywrightTestConfig = {
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: "html",
+  reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://localhost:3000',
-    baseURL: "https://genuine-narwhal-f0f8ad.netlify.app/",
+    baseURL: 'https://genuine-narwhal-f0f8ad.netlify.app/',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: "retain-on-failure",
+    trace: 'retain-on-failure',
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
-      name: "chromium",
+      name: 'chromium',
       use: {
-        ...devices["Desktop Chrome"],
-        storageState: "john-list.chromium.json",
+        ...devices['Desktop Chrome'],
+        storageState: 'john-list.chromium.json',
       },
     },
 
     {
-      name: "firefox",
+      name: 'firefox',
       use: {
-        ...devices["Desktop Firefox"],
-        storageState: "john-list.firefox.json",
+        ...devices['Desktop Firefox'],
+        storageState: 'john-list.firefox.json',
       },
     },
 
-    // {
-    //   name: "webkit",
-    //   use: {
-    //     ...devices["Desktop Safari"],
-    //     storageState: "john-list.webkit.json",
-    //   },
-    // },
+    {
+      name: 'webkit',
+      use: {
+        ...devices['Desktop Safari'],
+        storageState: 'john-list.webkit.json',
+      },
+    },
 
     /* Test against mobile viewports. */
     // {
